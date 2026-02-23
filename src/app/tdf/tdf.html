@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <!-- <form (ngSubmit)="OnSubmit(registerForm)" #registerForm> -->
+      <form (ngSubmit)="OnSubmit(registerForm)" #registerForm="ngForm">
+        <div id="user-data" ngModelGroup="userData" #userData="ngModelGroup">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              #username
+              required
+              id="username"
+              name="username"
+              #username1="ngModel"
+              ngModel
+              class="form-control"
+            />
+            <!-- {{ username.className }} -->
+            <small class="text-danger" *ngIf="username1.invalid && username1.touched"
+              >UserName IS Required</small
+            >
+          </div>
+          <button class="btn btn-primary mt-4 mb-4" type="button" (click)="SuggestUsername()">
+            Suggest User Name
+          </button>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="text"
+              id="email"
+              required
+              email
+              name="email"
+              #email="ngModel"
+              ngModel
+              class="form-control mb-1"
+            />
+            <div *ngIf="email.touched && email.errors">
+              <small class="text-danger" *ngIf="email.errors['required']">Email Is Required</small>
+              <small class="text-danger" *ngIf="email.errors['email']">invaild Email Format</small>
+            </div>
+          </div>
+          <p class="text-dang er" *ngIf="!userData.valid && userData.touched">
+            USer Data Is Invalid may be email or username
+          </p>
+        </div>
+        <div class="form-group">
+          <label for="secret">Q-secret</label>
+          <select
+            id="secret"
+            name="secret"
+            [ngModel]="defaultQuestion"
+            ngModel
+            class="form-control"
+          >
+            <option value="doctor">Your First Doctor</option>
+            <option value="teacher">Your First Teacher</option>
+          </select>
+        </div>
+        <br />
+        <div class="from-group">
+          <textarea name="QuestionAnswer" class="form-control" [(ngModel)]="answer" row="3">
+          </textarea>
+          <p>Your Replay is {{ answer }}</p>
+        </div>
+        <br />
+        <div class="radio" *ngFor="let gender of genders">
+          <label>
+            <input name="gender" type="radio" ngModel [value]="gender" />
+            {{ gender }}
+          </label>
+        </div>
+        <br />
+        <div>USer Data</div>
+        <div class="row" *ngIf="isSumbitted">
+          <div class="col-md-12">
+            <p>USerNAme:{{ userDataobj.username }}</p>
+            <p>email:{{ userDataobj.email }}</p>
+            <p>secretQuestion:{{ userDataobj.secret }}</p>
+            <p>answer:{{ userDataobj.answer }}</p>
+            <p>gender:{{ userDataobj.gernder }}</p>
+          </div>
+        </div>
+
+        <button class="btn btn-info mt-4 mb-4" [disabled]="!registerForm.valid" type="sumbit">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

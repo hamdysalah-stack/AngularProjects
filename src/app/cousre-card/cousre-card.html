@@ -1,0 +1,42 @@
+<div class="card" style="width: 400px" appHighlight>
+  <!-- @if (course.iconUrl) { 
+    <img class="card-img-top" [src]="course.iconUrl" alt="Card image" />
+  } @else {
+    <h1>No image available</h1>
+  } -->
+
+  <!-- <ng-content select="img"></ng-content> -->
+  <!-- <ng-content></ng-content> -->
+  <ng-content *ngIf="course.iconUrl; else noImage"></ng-content>
+
+  <!-- //using change detection -->
+  Edit course title :<input
+    type="text"
+    #Coursetitle
+    (keyup)="Ontitlechanged(Coursetitle.value)"
+    [value]="course.description"
+  />
+
+  <ng-template #noImage>
+    <ng-container
+      *ngTemplateOutlet="noImagetemplate; context: { description: course.description }"
+    ></ng-container>
+  </ng-template>
+
+  <div class="card-body">
+    <h4 class="card-title">{{ course.description }}</h4>
+    <p class="card-text">{{ course.longDescription }}</p>
+
+    <h3 appBasicHiglight [deafultColor]="'red'" [HighlightColor]="'lightyellow'">
+      This is custome dirctive
+    </h3>
+
+    <form>
+      <input type="text" require disabled />
+    </form>
+    <!-- <a href="#" class="btn btn-primary">lovee messi</a> -->
+
+    <button class="btn btn-primary" (click)="Oncourseviewed()">view Course</button>
+    <button class="btn btn-success" (click)="Onviewdbyid()">view number Course</button>
+  </div>
+</div>

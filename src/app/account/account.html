@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <h3>{{ Account.name }}</h3>
+    </div>
+    <hr />
+    <p>This account is {{ Account.status }}</p>
+    <button class="btn btn-primary me-3" (click)="OsetTo('active')">set to active</button>
+    <button class="btn btn-success me-3" (click)="OsetTo('Unactive')">set to Unactive</button>
+    <button class="btn btn-info me-3" (click)="OsetTo('')">set to active</button>
+  </div>
+</div>

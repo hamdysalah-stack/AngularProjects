@@ -1,0 +1,130 @@
+<div class="container">
+  <form [formGroup]="RegisterationForm">
+    <div class="justify-content:center">
+      {{ RegisterationForm.value | json }}
+    </div>
+
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input
+        type="text"
+        formControlName="userName"
+        [class.is-invalid]="GetUserName?.invalid && GetUserName?.touched"
+        id="username"
+        class="form-control"
+        autocomplete="new-username"
+      />
+
+      <div *ngIf="GetUserName?.invalid && GetUserName?.touched">
+        <small class="text-danger" *ngIf="GetUserName?.errors?.['required']"
+          >User Name is Required</small
+        >
+        <small class="text-danger" *ngIf="GetUserName?.errors?.['minlength']"
+          >U`ser NAme must be at least 5 digit</small
+        >
+
+        <small class="text-danger" *ngIf="GetUserName?.errors?.['forbiddenName']"
+          >{{ GetUserName?.errors?.['forbiddenName'].value }} is not allowed</small
+        >
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">password</label>
+      <input
+        type="password"
+        formControlName="Password"
+        id="password"
+        class="form-control"
+        autocomplete="new-password"
+      />
+
+      <!-- <div *ngIf="getPassword?.invalid && getPassword?.touched">
+        <small class="text-danger" ngIf="getPassword?.errors?.['required']"
+          >password must me required</small
+        >
+        <small class="text-danger" ngIf="getPassword?.errors?.['minlength']"
+          >min lenth has 5 digit</small
+        >
+      </div> -->
+    </div>
+    <div class="form-group">
+      <label for="Confirmpassword">Confirm Password</label>
+      <input
+        type="password"
+        formControlName="ConfirmPassword"
+        id="Confirmpassword"
+        class="form-control"
+        [class.is-invalid]="
+          RegisterationForm.errors?.['mismatch'] &&
+          RegisterationForm.get('ConfirmPassword')?.touched
+        "
+      />
+      <small class="text-danger" *ngIf="RegisterationForm.errors?.['mismatch']"
+        >Password and Consfir Password are not the same</small
+      >
+      <!-- {{ RegisterationForm.errors }} -->
+    </div>
+    <!-- Address -->
+    <div formGroupName="address" class="mb-3">
+      <div class="form-group">
+        <label for="state">State</label>
+        <input type="text" id="state" formControlName="State" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" id="city" formControlName="City" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="PostalCode">Postal Code</label>
+        <input type="text" id="PostalCode" formControlName="PostalCode" class="form-control" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="text"
+        id="email"
+        class="form-control"
+        formControlName="email"
+        [class.is-invalid]="getControl('email')?.invalid && getControl('email')?.touched"
+      />
+      <small
+        class="text-danger"
+        *ngIf="getControl('email')?.invalid && getControl('email')?.touched"
+      >
+        email Is Required</small
+      >
+    </div>
+    <div
+      formArrayName="AlterantiveEmail"
+      *ngFor="let email of AlterantiveEmail.controls; let i = index"
+    >
+      <label> new email{{ i + 1 }}</label>
+      <input type="text" class="form-control" [formControlName]="i" />
+      <button class="btn btn-danger float-end" (click)="clearlastEmail(i)">Clear</button>
+    </div>
+    <br />
+    <button class="btn btn-success float-end" (click)="OnAddEmail()">Add new Email</button>
+    <br />
+
+    <div class="form-check mt-3">
+      <input
+        type="checkbox"
+        class="form-check"
+        (click)="OnsetEmailValidation()"
+        formControlName="subscribe"
+      />
+      <label class="form-check-label"> send me offers</label>
+    </div>
+
+    <button class="btn btn-info float-end" (click)="OnLoadData()">Load Data</button>
+    <button type="submit" class="btn btn-primary">Register</button>
+  </form>
+</div>
+
+<!-- note
+ every element input in form called fromCotrol and all input called form Group 
+
+
+-->

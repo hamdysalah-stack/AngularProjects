@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+.hightlighted {
+    // color: green ;
+    color: green !important;
+}
+
+.course-card{
+    margin-bottom:40px;
+    text-align: center;
+    border: 1px black solid;
+    border-radius:4px;
+    padding:20px;
+    box-shadow: 1 1px 0 rgba(0,0,0,0.14),1 1px 8px 0 rgba(0, 0, 0, 0.14),0 4px 8px -1px rgba(0, 0, 0, 0.12);
+    width:30%
+}

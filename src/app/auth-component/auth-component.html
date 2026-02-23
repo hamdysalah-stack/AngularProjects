@@ -1,0 +1,9 @@
+<div class="col-xs-12 col-md-6 offset-3">
+  <!-- <app-alert-component [Message]="'an error occured in you app'"></app-alert-component> -->
+  <app-alert-component
+    (close)="OnhandleError()"
+    [Message]="error"
+    *ngIf="error"
+  ></app-alert-component>
+</div>
+<button (click)="OnRaiseError()" class="btn btn-primary">Raise Error</button>

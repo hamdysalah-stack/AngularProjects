@@ -1,0 +1,11 @@
+<div class="card">
+  <div class="card-header">{{ ele.name }}</div>
+  <div class="card-body">
+    <p>
+      <strong *ngIf="ele.type == 'Servers'" style="color: red">{{ ele.content }}</strong>
+      <em *ngIf="ele.type == 'blueprint'" style="color: blue">{{ ele.content }}</em>
+    </p>
+
+    <ng-content></ng-content>
+  </div>
+</div>

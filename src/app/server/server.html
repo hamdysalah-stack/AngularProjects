@@ -1,0 +1,37 @@
+<br />
+<!-- <button class="btn btn-primary" [disabled]="!allowedaddserver">add Server</button> -->
+<button class="btn btn-primary" (click)="OncreatedServer()">add Server</button>
+
+<div *ngFor="let s of Arrayserver">
+  {{ s }}
+</div>
+
+<br />
+
+@for (s of Arrayserver; track s) {
+  <p>{{ s }}</p>
+}
+<!-- <p *ngIf="iserverCreated; else noserver">Server created successfully using ngIf</p>
+
+<ng-template #noserver>
+  <p>No server created</p>
+</ng-template> -->
+
+@if (iserverCreated) {
+  <p>Server created successfully using ngIf</p>
+} @else {
+  <p>No server created</p>
+}
+<br />
+<h1>{{ serverCreationstatus }}</h1>
+Server with id equla {{ serverID }} with status equl {{ serverstatus }}
+<br />
+Server with id equla {{ serverID }} with status equl {{ getserverStatus() }}
+<hr />
+
+<input type="text" [(ngModel)]="servername" />
+<h1>{{ servername }}</h1>
+
+<h2 [ngStyle]="serverStyle">Welcome to course angular</h2>
+
+<h1 [ngClass]="serverClass">this is new server</h1>

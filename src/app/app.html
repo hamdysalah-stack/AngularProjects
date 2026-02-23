@@ -1,0 +1,224 @@
+<app-header></app-header>
+<!-- <app-server></app-server> -->
+
+<!-- <div class="container">
+  <app-core
+    (servercreated)="onAddServer($event)"
+    (blueprintcreated)="onAddblueprint($event)"
+  ></app-core>
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-primary" (click)="OnchangeFirst()">Change ele first</button>
+      <app-server-element *ngFor="let serverElement of serverElements" [ele]="serverElement">
+        <p>
+          <strong *ngIf="serverElement.type == 'Servers'" style="color: red">
+            {{ serverElement.content }}
+          </strong>
+
+          <em *ngIf="serverElement.type == 'blueprint'" style="color: blue">
+            {{ serverElement.content }}
+          </em>
+        </p>
+      </app-server-element>
+    </div>
+  </div>
+</div>
+
+<br /> -->
+<!-- <app-cousre-card (click)="oncardClicked()" [course]="coreCourse1"></app-cousre-card> -->
+
+<!-- @for (c of Courses; track c.id; let index = $index; let count = $count) {
+  {{ count }}
+  {{ index }}
+  <app-cousre-card
+    (courseIDselected)="OnviewbyId($event)"
+    (courselected)="OncourseSelected($event)"
+    [course]="c"
+  ></app-cousre-card> -->
+<!-- @if (index % 2 == 0) {
+    {{ index }}
+    <app-cousre-card
+      (courseIDselected)="OnviewbyId($event)"
+      (courselected)="OncourseSelected($event)"
+      [course]="c"
+    ></app-cousre-card>
+  } -->
+<!-- } @empty {
+  <h1>No Course found</h1>
+} -->
+
+<!-- <div #refContainer>
+  <app-cousre-card
+    (courselected)="OncourseSelected($event)"
+    [course]="Courses[0]"
+  ></app-cousre-card>
+  <br />
+  <app-cousre-card
+    #cardTwoRef
+    (courselected)="OncourseSelected($event)"
+    [course]="Courses[1]"
+  ></app-cousre-card>
+  <br />
+  <app-cousre-card
+    (courselected)="OncourseSelected($event)"
+    [course]="Courses[2]"
+  ></app-cousre-card>
+</div> -->
+
+<!-- using defer  -->
+
+<!-- @defer (on idle; prefetch on idle) { -->
+<!-- @defer (on idle) {
+  <div #Container>
+    <app-cousre-card
+      *ngFor="let courses of Courses"
+      (courselected)="OncourseSelected($event)"
+      [course]="courses"
+    >
+      <app-course-image [imageurl]="courses.iconUrl"></app-course-image>
+    </app-cousre-card>
+  </div>
+} @placeholder {
+  <p>this is placeholder content</p>
+} @loading (minimum 2s; after 1s) {
+  <h2>Loading...........</h2>
+} -->
+<!-- } @placeholder (minimum 3s) {
+  <p>this is placeholder content</p>
+} -->
+
+<!-- <div *ngIf="Courses[1] as course1"> -->
+<!-- <ng-template #blankimage let-courseName="description">
+      {{courseName}}
+      <p>No image availabel</p>
+    </ng-template> -->
+
+<!-- <ng-container *ngTemplateOutlet="blankimage;context:{description:course1.description}"> -->
+
+<!-- </ng-container>  -->
+<!-- <app-cousre-card [noImagetemplate]="blankimage" (courselected)="OncourseSelected($event)" [course]="course1">  -->
+
+<!-- ...................................................................... -->
+<!-- change detection -->
+
+<!-- //pularization  -->
+
+<!-- <div i18n>
+      {
+        totalCourses,plural},
+      =0{No course Avaliable}
+      ,=1{only course avaliable} other{A total of {{TotalCourses}} avaliable
+    }
+    </div> -->
+<!-- <div class="demo"> -->
+<!-- {{ TotalCourses }} -->
+<!-- <h4 i18n="Welcome message |greet the User@@welcomeMessage">Welcome to angular Course</h4> -->
+<!-- <button class="btn btn-primary" (click)="OnEditCourse()" i18n>EditCourse</button> -->
+<!-- <button class="btn btn-primary" (click)="OnEditCourse()">EditCourse</button>
+    </div> -->
+
+<!-- ....................................................................... -->
+
+<!-- <app-cousre-card (courselected)="OncourseSelected($event)" [course]="course1" level="'beginner">
+      <img #courseImg width="300px" alt="angular course" [src]="course1.iconUrl" />
+      <app-course-image [imageurl]="course1.iconUrl"></app-course-image>
+      <app-course-image [imageurl]="Courses[2].iconUrl"></app-course-image>
+      <app-course-image [imageurl]="Courses[4].iconUrl"></app-course-image>
+      <h3>total lesson :20</h3>
+    </app-cousre-card>
+  </div>
+
+  ciustomr directive
+  <app-cousre-card
+    (toggleHighlight)="onToggleHighlight($event)"
+    appHighlight
+    (courselected)="OncourseSelected($event)"
+    [course]="Courses[0]"
+  >
+    <div>
+      <app-cousre-card
+        appHighlight
+        (courselected)="OncourseSelected($event)"
+        #highlighter="high"
+        [course]="Courses[0]"
+      >
+        <app-course-image
+          [imageurl]="Courses[0].iconUrl"
+          (dbclick)="highlighter.toggle()"
+        ></app-course-image>
+
+        <h3>total lesson :20</h3>
+      </app-cousre-card>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="course-card">test card</div> -->
+
+<!-- <div class="container">
+  <div class="col-md-8 col-md-offset-8">
+    <app-new-account (AccountAdded)="OnAccountAdded($event)"></app-new-account>
+    <hr />
+    <app-account
+      *ngFor="let acc of Accounts; let i = index"
+      [Account]="acc"
+      [id]="i"
+      (StatusChanged)="OnStatusChanged($event)"
+    >
+    </app-account>
+  </div>
+</div> -->
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <a routerLink="/"> Home</a>
+      <a [routerLink]="['employee', 1]"> Employee 1</a>
+      |
+      <a [routerLink]="['employee', 2]"> Employee 2</a>
+    </div>
+  </div>
+
+  <hr />
+  <div class="row">
+    <div class="col-md-8">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+<p *ngIf="employeeActivAted">Activated !</p> -->
+<!-- // using tempalte driven from -->
+<!-- <app-tdf></app-tdf> -->
+<!-- <app-reactive-froms></app-reactive-froms> -->
+<!-- <div class="container">
+  <app-pipes></app-pipes>
+</div> -->
+<!-- <div class="container">
+  <app-posts-http></app-posts-http>
+</div> -->
+<!-- </app-cousre-card> -->
+<!-- </div> -->
+
+<!-- <div class="container">
+  <app-auth-component></app-auth-component>
+</div> -->
+
+<!-- SIgnals -->
+<div class="container">
+  <h3>Dervied Counter is {{ derviedCounter() }}</h3>
+  <!-- <div>Counter value is : {{ counter() }}</div> -->
+  <div>Counter value is : {{ CounterServices.counter() }}</div>
+  <div>COurse Title : {{ course().title }}</div>
+  <div>COurse are : {{ newCourses().join('|') }}</div>
+  <div>Mutltpier : {{ multiplier }}</div>
+  <button class="btn btn-primary" (click)="increment()">Increamnt counter</button>
+  <button class="btn btn-primary" (click)="MultiplierIncreament()">MultiplierIncreament</button>
+  <button (click)="CleanUp()" class="btn btn-primary">CleanUp</button>
+</div>
+
+<!-- Rjxs -->
+
+<!-- <app-about></app-about> -->
