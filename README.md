@@ -1,59 +1,214 @@
-# AngularProject
+# Angular Projects From Scratch
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.0.
+A complete Angular learning project that covers Angular from basics to advanced concepts through hands-on examples and mini-projects.
 
-## Development server
+This repository contains multiple practical implementations to understand Angular architecture, features, and real-world development.
 
-To start a local development server, run:
+---
+
+## 📌 Project Goal
+
+This project was created to:
+
+* Learn Angular step by step
+* Practice core and advanced concepts
+* Build real examples instead of only theory
+
+---
+
+## 🛠️ Technologies Used
+
+* Angular
+* TypeScript
+* RxJS
+* HTML5
+* SCSS
+* Bootstrap
+
+---
+
+## 📦 Installation & Run
+
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Run the application
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open browser:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
+## 📚 Course Content
+
+### 1. Angular Basics
+
+* Introduction to Angular
+* Project Structure & Architecture
+* Creating Components
+* Installing Bootstrap
+
+---
+
+### 2. Data Binding
+
+* Interpolation
+* Property Binding
+* Event Binding
+* Two-way Binding
+
+---
+
+### 3. Directives
+
+* *ngIf
+* *ngFor
+* *ngSwitch
+* ngClass
+* ngStyle
+* New Angular control flow (@if, @for)
+
+---
+
+### 4. Component Communication
+
+* @Input
+* @Output
+* Template Reference Variables
+* ViewChild & ViewChildren
+* Content Projection
+
+---
+
+### 5. Lifecycle Hooks
+
+* ngOnInit
+* ngOnChanges
+* ngAfterViewInit
+* ngOnDestroy
+* Full lifecycle overview
+
+---
+
+### 6. Services & Dependency Injection
+
+* Creating Services
+* Sharing Data
+* Logging Service
+* Best Practices
+
+---
+
+### 7. Routing
+
+* Basic Routing
+* Route Parameters
+* Query Parameters & Fragments
+* Child Routes
+* Guards (Auth, CanDeactivate)
+* Lazy Loading
+
+---
+
+### 8. Forms
+
+#### Template Driven Forms
+
+* Validation
+* Form State
+* ngModel
+
+#### Reactive Forms
+
+* FormGroup & FormControl
+* FormBuilder
+* Custom Validators
+* Dynamic Forms
+* valueChanges
+
+---
+
+### 9. RxJS & Observables
+
+* Creating Observables
+* Custom Observables
+* Subjects
+* Operators (map, pipe)
+* Subscription Management
+
+---
+
+### 10. Pipes
+
+* Built-in Pipes
+* Custom Pipes
+* Pure vs Impure Pipes
+* Async Pipe
+
+---
+
+### 11. HTTP & Interceptors
+
+* GET / POST / DELETE
+* HTTP Headers & Params
+* Error Handling
+* Loading Indicators
+* Authentication Interceptor
+* Multiple Interceptors
+
+---
+
+### 12. Authentication & Authorization
+
+* Signup & Login
+* Token Handling
+* Auto Login & Logout
+* Auth Guard
+
+---
+
+### 13. Advanced Angular Features
+
+* Change Detection (Default & OnPush)
+* Dynamic Components
+* Feature Modules
+* Lazy Loading Optimization
+* Internationalization (i18n)
+
+---
+
+### 14. Modern Angular (Angular 16+ / 17)
+
+* Signals
+* Computed & Effects
+* Standalone Components
+* @defer (Partial Lazy Loading)
+* New Control Flow Syntax
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+ ├── app/
+ │    ├── components
+ │    ├── services
+ │    ├── directives
+ │    ├── pipes
+ │    ├── interceptors
+ │    └── validations
+ ├── assets/
+ └── environments/
 ```
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
